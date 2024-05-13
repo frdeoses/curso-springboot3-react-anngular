@@ -1,0 +1,37 @@
+<button type="button" (click)="setEnable()">
+  {{ enable ? "Ocultar" : "Mostrar" }}
+</button>
+
+<!-- <div *ngIf="enable; else notEnable">
+  <h2>{{ title }}</h2>
+</div>
+
+<ng-template #notEnable>
+  <div>Lo sentimos no esta disponible</div>
+</ng-template>
+
+<ul *ngIf="enable">
+  <li *ngFor="let curso of courses">{{ curso }}</li>
+</ul> -->
+
+@if (enable) {
+<h2>{{ title }}</h2>
+
+<ul>
+  @for (course of courses; track $index) {
+  <li>
+    {{ course }}
+  </li>
+  }
+</ul>
+
+} @else {
+
+<h2>Lo sentimos no esta disponible</h2>
+
+}
+<br />
+--------------------------------------------------
+<app-product></app-product>
+<br />
+--------------------------------------------------
