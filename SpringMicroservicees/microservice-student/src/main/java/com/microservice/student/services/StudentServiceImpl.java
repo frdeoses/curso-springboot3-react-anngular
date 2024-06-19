@@ -3,9 +3,11 @@ package com.microservice.student.services;
 import com.microservice.student.entities.Student;
 import com.microservice.student.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentServiceImpl implements IStudentService {
 
     @Autowired
@@ -33,6 +35,6 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public List<Student> findByIdCourse(Long idCourse) {
-        return studentRepository.findAllStudent(idCourse);
+        return studentRepository.findAllByCourseId(idCourse);
     }
 }
